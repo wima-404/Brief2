@@ -10,7 +10,7 @@ import java.util.ArrayList;
     }
     public static void supprimerLivre(String isbn){
         for (Livre livre : Livres){
-            if (Livre.getIsbn().equals(isbn)){
+            if (livre.getIsbn().equals(isbn)){
                 Livres.remove(livre);
                 System.out.println("Livre supprime :"+livre);
                 return;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
      public void modifierLivre(String isbn , String  nouveauTitre , String nouveauAuteur){
         for (Livre livre : Livres ){
-            if(Livre.getIsbn().equals(isbn)){
+            if(livre.getIsbn().equals(isbn)){
                 livre.setTitre(nouveauTitre);
                 livre.setAuteur(nouveauAuteur);
                 System.out.println("Livre modifir :"+livre);
@@ -39,6 +39,15 @@ import java.util.ArrayList;
         }else{
             for(Livre livre : Livres){
                 System.out.println(livre);
+            }
+        }
+    }
+    public static void rechercherLivre(String search){
+        boolean trouver = false;
+        for(Livre livre : Livres){
+            if(livre.getTitre().equals(search) || livre.getAuteur().equals(search) || livre.getIsbn().equals(search)){
+                System.out.println(livre);
+                trouver = true;
             }
         }
     }

@@ -28,7 +28,7 @@
          this.auteur = auteur;
      }
 
-     public static String getIsbn() {
+     public  String getIsbn() {
          return isbn;
      }
      public void setIsbn(String isbn) {

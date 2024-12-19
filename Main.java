@@ -9,11 +9,12 @@ public class Main {
             System.out.println("2.Supprimer les livres");
             System.out.println("3.Modifier les livres");
             System.out.println("4.Afficher les livres");
-            System.out.println("5.Emprunter les livres");
-            System.out.println("6.Retourner les livres");
-            System.out.println("7.Afficher les livres disponibles et empruntés");
-            System.out.println("8.Quitter");
-            System.out.println("6.Choisissez une option :");
+            System.out.println("5.Rechercher les livres");
+            System.out.println("6.Emprunter les livres");
+            System.out.println("7.Retourner les livres");
+            System.out.println("8.Afficher les livres disponibles et empruntés");
+            System.out.println("9.Quitter");
+            System.out.println("10.Choisissez une option :");
             int choix = scanner.nextInt();
             switch (choix){
                 case 1:
@@ -43,6 +44,11 @@ public class Main {
                     Bibliotheque.afficherLivre();
                     break;
                 case 5:
+                    System.out.println("Rechercher : ");
+                    String search = scanner.nextLine();
+                    Bibliotheque.rechercherLivre(search);
+                    break;
+                case 6:
                     System.out.println("Au revoir");
                     scanner.close();
                     return;
