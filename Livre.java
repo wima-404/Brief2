@@ -1,7 +1,7 @@
  class Livre {
     private String titre;
     private String auteur;
-    private String isbn;
+    private static String isbn;
     private boolean disponible;
     public Livre(String titre, String auteur , String isbn, boolean disponible){
         this.titre=titre;
@@ -9,6 +9,8 @@
         this.isbn=isbn;
         this.disponible=disponible;
     }
+
+
 
      public String getTitre() {
          return titre;
