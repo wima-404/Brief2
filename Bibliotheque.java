@@ -4,7 +4,7 @@ import java.util.ArrayList;
     public Bibliotheque(){
         Livres = new ArrayList<>();
     }
-    public static void ajouterLivre(Livre livre){
+    public  void ajouterLivre(Livre livre){
         Livres.add(livre);
         System.out.println("Livre Ajoute :"+livre);
     }
@@ -19,10 +19,9 @@ import java.util.ArrayList;
         System.out.println("Livre avec ISBN  "+isbn+"introuvable");
     }
 
-     public static void modifierLivre(String isbnToModify) {
-     }
 
-     public void modifierLivre(String isbn , String  nouveauTitre , String nouveauAuteur){
+
+     public static void modifierLivre(String isbn, String nouveauTitre , String nouveauAuteur){
         for (Livre livre : Livres ){
             if(livre.getIsbn().equals(isbn)){
                 livre.setTitre(nouveauTitre);

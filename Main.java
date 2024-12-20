@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String [] args){
         Bibliotheque bibliotheque = new Bibliotheque();
+        Utilisateur utilisateur = new Utilisateur();
         Scanner scanner = new Scanner(System.in);
         while (true){
             System.out.println("\n ====Menu====");
@@ -26,28 +27,55 @@ public class Main {
                     String isbn = scanner.nextLine();
                     System.out.println("disponible ou non");
                     boolean disponibilite = scanner.nextBoolean();
-                    Bibliotheque.ajouterLivre(new Livre(title,auteur,isbn,disponibilite));
+                    scanner.nextLine();
+                    bibliotheque.ajouterLivre(new Livre(title,auteur,isbn,disponibilite));
                     System.out.println("Livre ajouté .");
                     break;
                 case 2 :
                     System.out.println("Entrez ISBN du livre supprimée ");
                     String isbnToDelete = scanner.nextLine();
-                    Bibliotheque.supprimerLivre(isbnToDelete);
+                    bibliotheque.supprimerLivre(isbnToDelete);
                     break;
                 case 3 :
-                    System.out.println("Entrez ISBN du livre a modifié");
+                    System.out.println("Entrez ISBN du livre à modifier");
+
                     String isbnToModify = scanner.nextLine();
-                    Bibliotheque.modifierLivre(isbnToModify);
+
+                    System.out.println("Entrez le nouveau titre du livre");
+                    String newTitle = scanner.nextLine();
+
+                    System.out.println("Entrez le nouveau nom de l'auteur");
+                    String newAuthor = scanner.nextLine();
+
                     break;
                 case 4:
-                    Bibliotheque.afficherLivre();
+                    bibliotheque.afficherLivre();
                     break;
                 case 5:
                     System.out.println("Rechercher : ");
                     String search = scanner.nextLine();
-                    Bibliotheque.rechercherLivre(search);
+                    bibliotheque.rechercherLivre(search);
                     break;
                 case 6:
+                    System.out.println("Entrez le nom :");
+                    String nNom = scanner.next();
+                    utilisateur.setNom(nNom);
+                    System.out.println("Entrez le livre que vous voullez emprunter");
+                    String mNom = scanner.next();
+                    utilisateur.emprunter(mNom);
+                    break;
+                case 7:
+                    System.out.println("Entrez le Nom");
+                    String dNom = scanner.next();
+                    utilisateur.setNom(dNom);
+                    System.out.println("Entrez le livre que vous voullez retourner");
+                    String qNom = scanner.next();
+                    utilisateur.retourner(qNom);
+                    break;
+                case 8:
+                    utilisateur.AfficherLivresEmpruntes();
+                    break;
+                case 9:
                     System.out.println("Au revoir");
                     scanner.close();
                     return;
