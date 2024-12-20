@@ -40,6 +40,22 @@
      public void setDisponible(boolean disponible) {
          this.disponible = disponible;
      }
+     public void emprunter(){
+         if(!disponible){
+             disponible=true;
+             System.out.println("Le livre"+titre+"a été emprunter");
+         }else{
+             System.out.println("Le livre a déja emprunter");
+         }
+     }
+     public void retourner(){
+         if(!disponible){
+             disponible=false;
+             System.out.println("Le Livre"+titre+"a été retourné");
+         }else{
+             System.out.println("Le livre a déja retourner");
+         }
+     }
 
      @Override
      public String toString() {

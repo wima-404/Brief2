@@ -26,7 +26,6 @@ public class Main {
                     String isbn = scanner.nextLine();
                     System.out.println("disponible ou non");
                     boolean disponibilite = scanner.nextBoolean();
-                    System.out.println("E");
                     Bibliotheque.ajouterLivre(new Livre(title,auteur,isbn,disponibilite));
                     System.out.println("Livre ajouté .");
                     break;
